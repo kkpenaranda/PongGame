@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class HumanBehaviour : PlayerBehaviour
 {
-    float speed = 1.5f;
+    float speed = 150f;
     
     void Update()
     {
         float movement = Input.GetAxisRaw("Vertical");
         float posY = transform.localPosition.y; 
 
-        if(posY + movement * speed < limit && posY + movement * speed > -limit)
-            transform.localPosition += new Vector3(0f, movement * speed, 0f);
+        if(posY + movement * speed * Time.deltaTime < limit && posY + movement * speed * Time.deltaTime > -limit)
+            transform.localPosition += new Vector3(0f, movement * speed * Time.deltaTime, 0f);
     }
 }
