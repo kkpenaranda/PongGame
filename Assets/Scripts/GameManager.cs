@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
                 currentTime += 1 * Time.deltaTime;
                 //Time between touches is 4 approx. So, if the time exceeds by much this value, it is possible that the ball entered on a loop. 
                 //In that case, the game should be restarted.
-                if (currentTime > 10)
+                if (currentTime > 15)
                 {
                     ResetGame();
                 }
