@@ -20,11 +20,12 @@ public class AIBehaviour : PlayerBehaviour
         if (ball.transform.localPosition.y < 165 && ball.transform.localPosition.y > - 165)
         {
             ballPosition = ball.transform.position;
-            if (ballPosition.y > transform.position.y)
+            
+            if (ballPosition.y > transform.position.y + size/2)
             {
                 transform.position += new Vector3(0, speed, 0);
             }
-            else if (ballPosition.y < transform.position.y)
+            else if (ballPosition.y < transform.position.y - size / 2)
             {
                 transform.position += new Vector3(0, -speed, 0);
             }
