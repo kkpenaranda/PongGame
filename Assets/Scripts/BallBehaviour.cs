@@ -55,13 +55,13 @@ public class BallBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "HumanGoal")
         { 
             manager.scoreHuman++;
-            if (manager.scoreHuman >= 6) manager.showWinner();
+            if (manager.scoreHuman >= 6) manager.ShowWinner();
             ResetGame();
         }
         else if (collision.gameObject.tag == "AIGoal")
         {
             manager.scoreAI++;
-            if (manager.scoreAI >= 6) manager.showWinner();
+            if (manager.scoreAI >= 6) manager.ShowWinner();
             ResetGame();
         }       
         

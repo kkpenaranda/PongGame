@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     /**
      * Indicates when the game is over and changes the text according to the winner.
      **/
-    public void showWinner()
+    public void ShowWinner()
     {
         isPlaying = false;
         finished = true;
