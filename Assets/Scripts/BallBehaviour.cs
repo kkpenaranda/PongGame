@@ -9,7 +9,7 @@ using UnityEngine;
 public class BallBehaviour : MonoBehaviour
 {
     //Given speed of the ball.
-    float velocity = 450f;
+    float velocity = 700f;
 
     //Reference to the script that controls the game.
     GameManager manager;
@@ -49,6 +49,7 @@ public class BallBehaviour : MonoBehaviour
      * Recognizes the collision for the goals.
      * Add points to the player that score the goal.
      * Restarts a round if nobody has reached the objective. If a player reaches 6 goals, the game is over and shows the winner.
+     * Recognizes when a player touches the ball.
      **/
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,32 +57,20 @@ public class BallBehaviour : MonoBehaviour
         { 
             manager.scoreHuman++;
             if (manager.scoreHuman >= 6) manager.ShowWinner();
-            ResetGame();
+            manager.ResetGame();
         }
         else if (collision.gameObject.tag == "AIGoal")
         {
             manager.scoreAI++;
             if (manager.scoreAI >= 6) manager.ShowWinner();
-            ResetGame();
+            manager.ResetGame();
         }       
-        
-    }
-
-    /**
-     * Starts a new round.
-     * Reset the positions of the objects, shows the points in the UI and throw the ball again.
-     * When a goal is done, the gameobject is disable to start a new game.
-     **/
-    private void ResetGame()
-    {
-        manager.ResetPositions();
-        manager.RefreshPoints();
-
-        if (manager.isPlaying)
-        { 
-            manager.goal = true;            
+        else if(collision.gameObject.tag == "Player")
+        {
+            manager.touchedRecently = true;
         }
-        gameObject.SetActive(false);
     }
+
+    
     
 }

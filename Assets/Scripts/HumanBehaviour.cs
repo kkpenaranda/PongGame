@@ -6,7 +6,7 @@ using UnityEngine;
 public class HumanBehaviour : PlayerBehaviour
 {
     // Velocity of the object that controls the human.
-    float speed = 150f;
+    float speed = 180f;
     
     /**
      * Identifies the clicked button and changes the Y position of the object according to it.

@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
     //Indicates if a goal is done.
     public bool goal = false;
 
+    //If a player touched the ball recently.
+    public bool touchedRecently = false;
+
+    //Variable that allows to count the seconds.
+    float currentTime = 0.0f;
+
     //Indicates if somebody won.
     bool finished = false;
     
@@ -50,6 +56,7 @@ public class GameManager : MonoBehaviour
     /**
      * Recognizes when the given key is pressed and restarts the game.
      * Recognizes if the ball was disable after a goal, to activate it again.
+     * If the game is active, recognizes how much has passed since a player touched the ball. This is made to avoid bugs/game crashing. E.g. The ball starts moving vertically and it is not possible for player to touched it.
      **/
     private void Update()
     {
@@ -62,6 +69,25 @@ public class GameManager : MonoBehaviour
             goal = false;
             ball.SetActive(true);
         }
+        if(isPlaying)
+        {
+            if (touchedRecently)
+            {
+                currentTime = 0.0f;
+                touchedRecently = false;
+            }
+            else
+            {
+                currentTime += 1 * Time.deltaTime;
+                //Time between touches is 4 approx. So, if the time exceeds by much this value, it is possible that the ball entered on a loop. 
+                //In that case, the game should be restarted.
+                if (currentTime > 10)
+                {
+                    ResetGame();
+                }
+            }
+        }
+        
     }
 
     /**
@@ -91,6 +117,24 @@ public class GameManager : MonoBehaviour
         ball.transform.localPosition = new Vector3(0, 0, 0);
         humanPlayer.transform.localPosition = new Vector3(humanPlayer.transform.localPosition.x, 0, 0);
         AIPlayer.transform.localPosition = new Vector3(AIPlayer.transform.localPosition.x, 0, 0);
+    }
+
+    /**
+     * Starts a new round.
+     * Reset the positions of the objects, shows the points in the UI and throw the ball again.
+     * When a goal is done, the gameobject is disable to start a new game.
+     **/
+    public void ResetGame()
+    {
+        currentTime = 0.0f;
+        ResetPositions();
+        RefreshPoints();
+
+        if (isPlaying)
+        {
+            goal = true;
+        }
+        ball.SetActive(false);
     }
 
     /**
