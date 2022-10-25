@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 128112419}
   m_Layer: 5
   m_Name: ScoreSpaceR
-  m_TagString: Untagged
+  m_TagString: HumanGoal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,8 +220,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 387, y: 0.00059795}
-  m_SizeDelta: {x: 22.4847, y: 450}
+  m_AnchoredPosition: {x: 377.8669, y: 0.00044536}
+  m_SizeDelta: {x: 40.751, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &128112419
 BoxCollider2D:
@@ -236,7 +236,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.53390884, y: -0.9946976}
+  m_Offset: {x: -2.9694347, y: -0.99468994}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -247,8 +247,62 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 27.695057, y: 448.28088}
+  m_Size: {x: 32.56611, y: 448.28088}
   m_EdgeRadius: 0
+--- !u!1 &152061310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152061312}
+  - component: {fileID: 152061311}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &152061311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152061310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9867dc48d697014ea20b8977c56d96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreHuman: 0
+  scoreAI: 0
+  isPlaying: 0
+  ball: {fileID: 923731693}
+  humanPlayer: {fileID: 1008761903}
+  AIPlayer: {fileID: 1249383915}
+  humanPoints: {fileID: 298360528}
+  AIPoints: {fileID: 1555338440}
+  winnerObj: {fileID: 1202018609}
+  winnerInfo: {fileID: 1456026534}
+--- !u!4 &152061312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152061310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1031.8593, y: 549.474, z: -3.2834601}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298360526
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &923731694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1195,7 +1249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202018609
 GameObject:
@@ -1209,7 +1263,7 @@ GameObject:
   - component: {fileID: 1202018612}
   - component: {fileID: 1202018611}
   m_Layer: 0
-  m_Name: Winner
+  m_Name: FinalInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1481,7 +1535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280312109
 GameObject:
@@ -1501,7 +1555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1280312110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1586,7 +1640,7 @@ GameObject:
   - component: {fileID: 1456026535}
   - component: {fileID: 1456026534}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Winner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1959,7 +2013,7 @@ GameObject:
   - component: {fileID: 1674525964}
   m_Layer: 5
   m_Name: ScoreSpaceL
-  m_TagString: Untagged
+  m_TagString: AIGoal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1981,8 +2035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -386.7, y: 0.00059795}
-  m_SizeDelta: {x: 22.4847, y: 450}
+  m_AnchoredPosition: {x: -376.958, y: 0.00029277}
+  m_SizeDelta: {x: 41.9688, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1674525964
 BoxCollider2D:
@@ -1997,7 +2051,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.53390884, y: -0.9946976}
+  m_Offset: {x: 2.5104747, y: -0.99468994}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2008,7 +2062,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 27.695057, y: 448.28088}
+  m_Size: {x: 33.78382, y: 448.28088}
   m_EdgeRadius: 0
 --- !u!1 &1694175687
 GameObject:
@@ -2147,7 +2201,7 @@ RectTransform:
   - {fileID: 1280312110}
   - {fileID: 1202018610}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
