@@ -1,20 +1,9 @@
 using UnityEngine;
 
-public class HumanPlayerBehaviour : MonoBehaviour
+public class HumanBehaviour : PlayerBehaviour
 {
     float speed = 1.5f;
-    [SerializeField] private GameObject UpWall;
-
-    float limit;
-
-    private void Start()
-    {
-        float upLimit = UpWall.transform.localPosition.y;
-        float size = GetComponent<RectTransform>().rect.height;
-
-        limit = upLimit - size / 2;
-    }
-
+    
     void Update()
     {
         float movement = Input.GetAxisRaw("Vertical");
