@@ -15,7 +15,7 @@ public class AIBehaviour : PlayerBehaviour
     Vector2 ballPosition;
 
     //Velocity of the object.
-    float speed = 625f;
+    float speed = 635f;
 
     /**
      * Defines what the object should do in every frame.
